@@ -1,0 +1,10 @@
+df_tire=pd.read_csv('path of files', header=0, usecols=['','',''])  #读取方式
+header=0表示你的数据集是有一个表头的，header=None表示你的数据集是没有表头的
+usecols 是use columns的缩写，用来指定read_excel读取excel表时只读取usecols指定列的数据
+    None：全部（默认的）
+    Str:’a,c’,’a,c:e’ 使用列号  这个是数字，不用中括号
+    Int-list:[0,2] 使用列索引  索引号是从0开始的
+    Str-list:[‘AAA’,’ccc’] 使用数据表的表头字段
+df_tire.dropna(how='all')
+    在这个里面最重要的是一个是axis，axis=0是对应index，表示按行删除，axis=1是对应column，表示按列删除
+    thresh 表示是至少有n个非NaN的数据的行（0）/列（1）
